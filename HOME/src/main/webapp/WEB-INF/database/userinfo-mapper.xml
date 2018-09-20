@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.biz.home.dao.UserInfoDao">
+	<insert id="UserInfoInsert" parameterType="UserInfoVO"> <!-- 회원가입 할 때 사용하는 쿼리문 -->
+		INSERT INTO userinfo
+		(userid,password,name,phone,addr,email,type,mediation_num,register_num)
+		values(#{userid},#{password},#{name},#{phone},#{addr},#{email},#{type},#{mediation_num},#{register_num})
+	</insert>
+ 
+	<select id="loginCheck" parameterType="UserInfoVO" resultType="int"> <!-- userid, password가 일치하는것이 있는지 확인 (count의 유무에 따라...로그인 시 사용) -->
+		SELECT count(*) FROM userinfo WHERE userid=#{userid} AND password=#{password}
+	</select>
+ 
+	<select id="GetType" parameterType="UserInfoVO" resultType="String"> <!-- type return값이 0(일반회원)인지 1(공인중개사)인지 확인하기 위해서 -->
+		SELECT type FROM userinfo where userid=#{userid} AND password=#{password}
+	</select>
+
+<!-- 	<select id="IdCheck" parameterType="UserInfoVO" resultType="int"> -->
+	<select id="checkId" resultType="int"> <!-- -->
+		SELECT count(*) FROM userinfo WHERE userid=#{userid}
+	</select>
+
+	<select id="selectOne" parameterType="String"
+		resultType="UserInfoVO"> <!-- -->
+		select * From userinfo where userid = #{user}
+	</select>
+
+	<update id="ClientUpdate" parameterType="UserInfoVO">
+		UPDATE userinfo
+		SET password=#{password}, name=#{name}, phone=#{phone}, addr=#{addr},
+		email=#{email}, type=#{type}, mediation_num=#{mediation_num},
+		register_num=#{register_num}
+		WHERE userid=#{userid}
+	</update>
+
+	<update id="AgentUpdate" parameterType="UserInfoVO">
+		UPDATE userinfo
+		SET password=#{password}, name=#{name}, phone=#{phone}, addr=#{addr},
+		email=#{email}, type=#{type}, mediation_num=#{mediation_num},
+		register_num=#{register_num}
+		WHERE userid=#{userid}
+	</update>
+
+	<delete id="deleteUser" parameterType="UserInfoVO">
+		delete from userinfo where userid = #{userid}
+	</delete>
+	
+ 	<select id="UserInfoPassword"  parameterType="UserInfoVO" resultType="UserInfoVO">
+ 		SELECT userid, password FROM userinfo WHERE userid=#{userid} AND password=#{password}
+ 	</select>
+
+</mapper>
+  

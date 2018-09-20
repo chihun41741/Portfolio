@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.biz.home.dao.PurchaseInfoDao">
+	<insert id="PurchaseInfoInsert" parameterType="PurchaseInfoVO">
+		INSERT INTO purchaseinfo
+		(writer,loc,leasetype,roomtype,monthlyrent,deposit,duration,comment)
+		values(#{writer},#{loc},#{leasetype},#{roomtype},#{monthlyrent},#{deposit},#{duration},#{comment})
+	</insert>
+
+	<select id="PurchaseInfoSelectOne" parameterType="String" resultType="PurchaseInfoVO">
+		select * from purchaseinfo where purchaseno=#{purchaseno}
+	</select>
+	
+	<select id="PurchaseInfoSelectAll" resultType="PurchaseInfoVO">
+		select * from purchaseinfo		
+	</select>
+
+	<select id="PurchaseInfoSelectByID" resultType="PurchaseInfoVO">
+		select * from purchaseinfo where writer = #{userid}	
+	</select>
+
+	<delete id="PurchaseInfoDelete" parameterType="String">
+		DELETE FROM purchaseinfo WHERE purchaseno=#{purchaseno}
+	</delete>
+
+	<update id="PurchaseInfoUpdate" parameterType="PurchaseInfoVO">
+		UPDATE purchaseinfo SET
+		writer=#{writer},loc=#{loc},leasetype=#{leasetype},roomtype=#{roomtype},monthlyrent=#{monthlyrent},deposit=#{deposit},duration=#{duration},comment=#{comment} 
+		WHERE purchaseno=#{purchaseno}
+	</update>
+
+
+</mapper>
+  

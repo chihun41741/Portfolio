@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.biz.home.dao.SaleInfoDao">
+	<insert id="SaleInfoInsert" parameterType="SaleInfoVO">
+		INSERT INTO saleinfo
+		(writer,loc,leasetype,roomtype,monthlyrent,deposit,startdate,duedate,comment,filename)
+		values(#{writer},#{loc},#{leasetype},#{roomtype},#{monthlyrent},#{deposit},#{startdate},#{duedate},#{comment},#{filename})
+	</insert>
+
+	<select id="SaleInfoSelectOne" parameterType="String" resultType="SaleInfoVO">
+		select * from saleinfo where saleno=#{saleno}
+	</select>
+	
+	<select id="SaleInfoSelectAll" resultType="SaleInfoVO">
+		select * from saleinfo		
+	</select>
+		
+	<select id="SaleInfoSelectByID" resultType="SaleInfoVO">
+		select * from saleinfo where writer = #{userid}	
+	</select>
+		
+	<delete id="SaleInfoDelete" parameterType="String">
+		DELETE FROM saleinfo WHERE saleno=#{saleno}
+	</delete>
+
+	<update id="SaleInfoUpdate" parameterType="SaleInfoVO">
+		UPDATE saleinfo SET
+		writer=#{writer},loc=#{loc},leasetype=#{leasetype},roomtype=#{roomtype},monthlyrent=#{monthlyrent},deposit=#{deposit},startdate=#{startdate},
+		duedate=#{duedate},comment=#{comment} WHERE saleno=#{saleno}
+	</update>
+
+
+</mapper>
+  

@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+
+*{margin:0; padding:0; box-sizing:border-box;}
+body{ background:#fff url(../imgs/body_wrap.jpg) repeat-y center center;}
+.wrap{width:1600px; margin:0 auto;}
+.clear{clear:both;}
+
+header{width:1600px; height:75px;}
+.logo{position:absolute; left:50%; float:left; margin:5px; margin-left:-120px; width:240px; height:75px;}
+.header_menu{float:right; margin:10px 5px; list-style:none;}
+.header_menu li{float:left;}
+.header_menu li .btn{background:#f0eeec; margin:10px 10px;}
+
+
+section .section_article h2{font-weight:bold; font-size:50px; text-align:center;}
+section .section_article p{display:block;  font-size:30px; text-align:center;}
+section .section_article .thumbnail_img a{ width:300px; margin:0 100px;} 
+
+/* index_section */
+.index_section { height:1000px;}
+
+/* insert_section */
+.insert_section {height:800px;}
+.insert_section h2{position:absolute; left:41%; top:30%; font-family: 'Nanum Pen Script', cursive;}
+.insert_wrap{position:absolute; left:40%; top:40%;}
+.insert_section input{margin-left:30px;}
+
+
+/* client_insert_section */
+.client_insert_section {height:800px;}
+
+/* agent_insert_section */
+.agent_insert_section {height:950px;}
+
+/* login_section */
+.login_section{height:800px;}
+.login_section h1{text-align:center;}
+.login_section .container{
+	width:500px; height:300px;
+	position:absolute; left:38%; top:20%;
+	} 
+.login_section button {margin-left:200px;}
+
+/* purchase_insert_section */
+.purchase_insert_section{height:810px;}
+
+/* purchase_list_section */
+.purchase_list_section {height:810px;}
+
+/* sale_list_section */
+.sale_list_section {height:800px; margin-top:30px;}
+
+/* mypage_section */
+.mypage_section{height:810px;}
+.mypage_section .container{position:absolute; left:38%; top:30%;}
+.mypage_section .btn{margin-left:20px;}
+.mypage_section h2{position:absolute; top:250px; left:43%; text-align:center; font-family: 'Nanum Pen Script', cursive;  }
+
+/* login_update_section */
+.login_update_section {height:820px;}
+
+/* user_delete_section */
+.user_delete_section {height:810px;}
+.user_delete_section .form{
+	width:400px; height:100px;
+	position:absolute; left:40%; top:30%;
+	}
+.user_delete_section h2 {
+	position:absolute; left:45%; top:25%;
+	font-family: 'Nanum Pen Script', cursive;
+	}
+	
+/* purchase_list_by_id_section */
+.purchase_list_by_id_section{height:800px;margin-top:30px;}
+
+/* sale_insert_section */
+.sale_insert_section {height:950px;}
+	
+/* sale_list_by_id_section */
+.sale_list_by_id_section{height:800px; margin-top:30px;}
+	
+
+
+footer{width:100%; height:100px; background:#ebe5de; font-family: 'Nanum Pen Script', cursive;}
+.footer_text1{float:left; font-size:25px; margin:10px 0 0 20px;}
+.footer_text2{float:left; font-size:25px; margin:10px 0 0 50px;}
+.footer_icon {float:right; font-size:50px;margin-top:20px; margin-right:20px;}
+
+
+
+.footer_icon i {padding:10px;}
+/*  insert_section.jsp */
+.insert_h2 {text-align:center;}
